@@ -16,14 +16,14 @@ title: Asymptotic-Preserving Neural Networks
 
 <br>
 
-Keke Wu
+Zheng Ma
 
 Shanghai Jiao Tong University
 
 <br>
 <br>
 
-Joint work with Zheng Ma and Shi Jin(SJTU)
+Joint work with Shi Jin and Keke Wu
 
 <!-- <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
