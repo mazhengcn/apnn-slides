@@ -87,7 +87,7 @@ $$
 
 <div class="top-5 right-8 absolute">
 
-<img src="/transport.PNG" alt="transport" title="transport" width="300" height="200" class="mx-auto">
+<img src="/transport.png" alt="transport" title="transport" width="300" height="200" class="mx-auto">
 
 </div>
 
