@@ -55,11 +55,10 @@ Joint work with Shi Jin and Keke Wu
 <br>
 <br>
 
-#### 2. Method
-  
-  - APNN v1
-  
-  - APNN v2
+#### 2. Methods
+
+- APNN v1
+- APNN v2
 
 <br>
 <br>  
@@ -91,9 +90,9 @@ $$
 
 </div>
 
-- $f:$ distribution function of particles at time $t$, space position $x$ and traveling in direction $v$
-- $Q:$ collision operator
-- $\varepsilon > 0:$ Knudsen number 
+- $f$: distribution function of particles at time $t$, space position $x$ and traveling in direction $v$
+- $Q$: collision operator
+- $\varepsilon>0$: Knudsen number 
 
 <br>
 
@@ -226,7 +225,8 @@ $$
 \end{equation*}
 $$
 
-<img src="/ex1_pinns.png" width="400" height="300" class="h-40 float-left ml-5"/>
+<!-- <img src="/ex1_pinns.png" width="400" height="300" class="h-40 float-left ml-5"/> -->
+<img src="/ex1_pinns.png" width="300" height="400" class="h-40 float-left ml-5"/>
 
 </div><div v-click>
 
@@ -243,7 +243,7 @@ $$
 \end{equation*}
 $$
 
-<img src="/ex2_pinns.png" width="400" height="300" class="h-40 float-left ml-5"/>
+<img src="/ex2_pinns.png" width="300" height="400" class="h-40 float-left ml-5"/>
 
 PINN fails to obtain the ground truth !
 
