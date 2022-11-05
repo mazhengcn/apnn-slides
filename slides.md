@@ -1120,7 +1120,7 @@ $$
 
 ---
 
-# Euler equation 
+# APNN System 
 
 <br>
 
