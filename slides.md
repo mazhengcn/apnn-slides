@@ -161,7 +161,7 @@ Procedure of solving PDEs by DNNs:
 <v-clicks>
 
 - Modeling: define the loss associated to a PDE;
-- Architecture: build a deep neural network(function class) for the trail function;
+- Architecture: build a deep neural network (function class) for the trail function;
 - Optimization: minimize loss over the parameter space.
 
 </v-clicks>
@@ -214,7 +214,7 @@ $$
 <div v-click>
 
 ###### 
-Ex 1: Periodic boundary condition($\varepsilon=1$)
+Ex 1: Periodic boundary condition ($\varepsilon=1$)
 
 $$
 \begin{equation*}
@@ -245,7 +245,7 @@ $$
 
 <img src="/ex2_pinns.png" width="300" height="400" class="h-40 float-left ml-5"/>
 
-PINN fails to obtain the ground truth !
+PINN fails to obtain the ground truth!
 
 </div></div>
 
@@ -506,7 +506,7 @@ $$
 <div v-click>
 
 ###### 
-Ex 1: Periodic boundary condition($\varepsilon=1$)
+Ex 1: Periodic boundary condition ($\varepsilon=1$)
 
 $$
 \begin{equation*}
@@ -522,7 +522,7 @@ $$
 </div><div v-click>
 
 ###### 
-Ex 2: Inflow boundary condition($\varepsilon=10^{-8}$)
+Ex 2: Inflow boundary condition ($\varepsilon=10^{-8}$)
 
 $$
 \begin{equation*}
@@ -558,11 +558,11 @@ One can observed that APNN work for both $\varepsilon=1$ and $\varepsilon=10^{-8
 <div v-click>
 
 ###### 
-Ex 3: Inflow boundary condition($\varepsilon=10^{-8}$)
+Ex 3: Inflow boundary condition ($\varepsilon=10^{-8}$)
 
 For the constraint $\left \langle g \right \rangle = 0$, one way is to construct a novel neural network for $g$ such that it  exactly satisfies $\left \langle g \right \rangle = 0$. 
 
-The other way is to  treat it as a soft constraint with parameter $\lambda_3$, we use $\hat{g}_{\theta}^{\text{NN}}$ and modifies the loss as
+The other way is to treat it as a soft constraint with parameter $\lambda_3$, we use $\hat{g}_{\theta}^{\text{NN}}$ and modifies the loss as
 $$
 \begin{equation*}
   \mathcal{R}_{\text{APNN}} +  \frac{\lambda_3}{|\mathcal{T} \times \mathcal{D}|} \int_{\mathcal{T}} \int_{\mathcal{D}} | \left \langle  \hat{g}^{\text{NN}}_{\theta} \right \rangle - 0|^2 \mathrm{d}{{x}}  \mathrm{d}{t}.
@@ -574,7 +574,7 @@ $$
 </div><div v-click>
 
 ###### 
-Plot of density $\rho$ at $t = 0.1$: APNNs with soft constraint(marker) vs. Ref(line). 
+Plot of density $\rho$ at $t = 0.1$: APNNs with soft constraint (marker) vs. Ref (line). 
 
 <img src="/ex2_1e-8_noexact.png" width="400" height="300" class="h-50 float-left ml-5"/>
 
@@ -802,7 +802,7 @@ $$
 <div v-click>
 
 ###### 
-Case I: Inflow boundary condition($\varepsilon=10^{-3}$)
+Case I: Inflow boundary condition ($\varepsilon=10^{-3}$)
 
 $$
 \begin{equation*}
@@ -827,7 +827,7 @@ $\rho^{\text{NN}}_{\theta}(t, x) := t \cdot \exp \left( -\tilde{\rho}^{\text{NN}
 </div><div v-click>
 
 ###### 
-Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs(marker) vs. Ref(line). 
+Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs (marker) vs. Ref (line). 
 
 <img src="/dirichlet10_sol.png" width="400" height="300" class="h-40 float-left ml-5"/>
 
@@ -848,7 +848,7 @@ Relative $\ell^2$ error of APNNs is $9.87 \times 10^{-3}$.
 
 The numerical performance of enforcement of initial condition and the soft constraint $\rho = \left \langle r \right \rangle$ are discussed as follows.
 
-Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs(marker) vs. Ref(line).
+Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs (marker) vs. Ref (line).
 
 </div>
 
@@ -891,7 +891,7 @@ The solutions are also wrong at time $t = 0, 0.05, 0.1$, therefore, we consider 
 <div v-click>
 
 ###### 
-Case II: Dirichlet boundary condition($\varepsilon=10^{-8}$)
+Case II: Dirichlet boundary condition ($\varepsilon=10^{-8}$)
 
 $$
 \begin{equation*}
@@ -909,7 +909,7 @@ In this case, $f$ has no jump with non-constant value of initial.
 </div><div v-click>
 
 ###### 
-Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs(marker) vs. Ref(line). 
+Plot of density $\rho$ at $t = 0, 0.05, 0.1$: APNNs (marker) vs. Ref (line). 
 
 <img src="/dirichlet00_sol.png" width="400" height="300" class="h-40 float-left ml-5"/>
 
@@ -938,7 +938,7 @@ Relative $\ell^2$ error of APNNs is $1.25 \times 10^{-2}$.
 <div v-click>
 
 ###### 
-Case III: UQ problems with inflow condition($\varepsilon=10^{-5}$)
+Case III: UQ problems with inflow condition ($\varepsilon=10^{-5}$)
 
 $$
 \begin{equation*}
@@ -1421,9 +1421,9 @@ Setting: ResNet with units $[3, 128, 128, 128, 128, 128, 128, 1]$ for $f$ and $[
 $\lambda_{10} = \lambda_{11} = \lambda_{13} = \lambda_{14} = 10$ 
 and others are set to be $1$. 
 
-For $t = 0:$ mean square error of density, momentum and energy are $1.29\text{e-4}, 6.34\text{e-6}, 4.41\text{e-5}$. 
+For $t = 0$: mean square error of density, momentum and energy are $1.29\text{e-4}, 6.34\text{e-6}, 4.41\text{e-5}$. 
 
-For $t = 0.1:$ relative $l^2$ error of density, momentum and energy are $1.36\text{e-2}, 2.00\text{e-2}, 3.99\text{e-2}$.
+For $t = 0.1$: relative $l^2$ error of density, momentum and energy are $1.36\text{e-2}, 2.00\text{e-2}, 3.99\text{e-2}$.
 
 </div></div>
 
@@ -1519,9 +1519,9 @@ Setting: ResNet with units $[3, 128, 128, 128, 128, 128, 128, 1]$ for $f$ and $[
 $\lambda_{9} = 0.1$, $\lambda_{11} = \lambda_{13} = \lambda_{14} = 10$ 
 and others are set to be $1$. 
 
-For $t = 0:$ mean square error of density, momentum and energy are $4.87\text{e-8}, 1.22\text{e-6}, 3.29\text{e-8}$. 
+For $t = 0$: mean square error of density, momentum and energy are $4.87\text{e-8}, 1.22\text{e-6}, 3.29\text{e-8}$. 
 
-For $t = 0.1:$ relative $l^2$ error of density, momentum and energy are $6.19\text{e-3}, 1.78\text{e-2}, 3.60\text{e-2}$.
+For $t = 0.1$: relative $l^2$ error of density, momentum and energy are $6.19\text{e-3}, 1.78\text{e-2}, 3.60\text{e-2}$.
 
 </div></div>
 
@@ -1617,9 +1617,9 @@ Setting: ResNet with units $[3, 128, 128, 128, 128, 128, 128, 1]$ for $f$ and $[
 $\lambda_{9} = 0.1$, $\lambda_{11} = \lambda_{13} = \lambda_{14} = 10$ 
 and others are set to be $1$. 
 
-For $t = 0:$ mean square error of density, momentum and energy are $9.89\text{e-8}, 2.34\text{e-6}, 2.08\text{e-7}$. 
+For $t = 0$: mean square error of density, momentum and energy are $9.89\text{e-8}, 2.34\text{e-6}, 2.08\text{e-7}$. 
 
-For $t = 0.1:$ relative $l^2$ error of density, momentum and energy are $6.41\text{e-3}, 8.72\text{e-3}, 1.62\text{e-2}$.
+For $t = 0.1$: relative $l^2$ error of density, momentum and energy are $6.41\text{e-3}, 8.72\text{e-3}, 1.62\text{e-2}$.
 
 </div></div>
 
@@ -1762,9 +1762,9 @@ Setting: ResNet with units $[3, 128, 128, 128, 128, 128, 128, 1]$ for $f$ and $[
 $\lambda_{5} = \lambda_{6} = 10$, $\lambda_{11} = \lambda_{13} = \lambda_{14} = 100$ 
 and others are set to be $1$. 
 
-For $t = 0:$ mean square error of density, momentum and energy are $1.72\text{e-4}, 1.59\text{e-4}, 7.08\text{e-5}$. 
+For $t = 0$: mean square error of density, momentum and energy are $1.72\text{e-4}, 1.59\text{e-4}, 7.08\text{e-5}$. 
 
-For $t = 0.05:$ relative $l^2$ error of density, momentum and energy are $4.03\text{e-2}, 2.31\text{e-2}, 5.15\text{e-2}$.
+For $t = 0.05$: relative $l^2$ error of density, momentum and energy are $4.03\text{e-2}, 2.31\text{e-2}, 5.15\text{e-2}$.
 
 </div></div>
 
