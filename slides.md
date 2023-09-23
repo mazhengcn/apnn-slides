@@ -38,7 +38,7 @@ Joint work with Shi Jin, Keke Wu, Yekun Zhu, Tianai Zhang and Xiongbin Yan
 
 # Background
 
-Kinetic equations are important in many areas such as nuclear, medical and aerospace.
+Kinetic equations are important in many areas 
 
 <div class="grid grid-cols-2 gap-x-4 mt-4">
 
@@ -51,7 +51,7 @@ Neutron Transport:
   <img src="/nte.png" class="h-60 rounded-lg b-1 b-b">
 </div>
 
-Nuclear reactor, 
+Nuclear fission, nuclear fusion, ...
 
 </div>
 
@@ -64,12 +64,12 @@ Radiative Transfer:
   <img src="/rte.png" class="h-60 rounded-lg b-1 b-b">
 </div>
 
-TPS, Radiation Therapy, ...
+Radiation Therapy, TPS, ...
 </div>
 
 </div>
 
-Solving neutron transport, radiative transfer and Boltzmann eqautions are the core part of these problems.
+Solving the neutron transport, radiative transfer and Boltzmann eqautions are the core part of these problems.
 
 ---
 
@@ -176,8 +176,8 @@ Key components and core ideas of solving PDEs by DNNs
   - **Model**: define the loss associated to a PDE (e.g., PINNs, DeepRitz)
   - Data: pure supervised or as a priori information
   - IC (initial conditions) and BC (boundary conditions)
-  - Other constraints: **conservation**, symmetry, etc
-- **Optimization**: minimize loss over the parameter space, usually SGD, Adam, LBFGS, etc
+  - Other constraints: **conservation**, symmetry, etc.
+- **Optimization**: minimize loss over the parameter space, usually SGD, Adam, LBFGS, etc.
 
 
 ---
@@ -485,15 +485,6 @@ $\mathcal{F^{\varepsilon}}$ is the microscopic equation that depends on the smal
 
 # APNN v1: based on Micro-macro decomposition
 
-
-<img src="/APNNs.jpg" class="h-90 mx-auto rounded-lg b-1 b-b" />
-
-Mass conservation mechanism $g^{\text{NN}}_{\theta} = \tilde{g}^{\text{NN}}_{\theta}-\left \langle \tilde{g}^{\text{NN}}_{\theta} \right\rangle$ is also important!
-
----
-
-# APNN v1: based on Micro-macro decomposition
-
 Re-design of loss
 
 $$
@@ -512,6 +503,15 @@ $$
                                                   & + \frac{1}{|\mathcal{T} \times \mathcal{D} \times \Omega|} \int_{\mathcal{T}} \int_{\mathcal{D}} \int_\Omega | {v} \cdot  \nabla_{{x}} \rho^{\text{NN}}_{\theta} +  g^{\text{NN}}_{\theta} |^2.
     \end{aligned}
 $$
+
+---
+
+# APNN v1: based on Micro-macro decomposition
+
+
+<img src="/APNNs.jpg" class="h-90 mx-auto rounded-lg b-1 b-b" />
+
+Mass conservation mechanism $g^{\text{NN}}_{\theta} = \tilde{g}^{\text{NN}}_{\theta}-\left \langle \tilde{g}^{\text{NN}}_{\theta} \right\rangle$ is also important!
 
 
 ---
@@ -1370,7 +1370,14 @@ $$
   \right.
 $$
 
-Our goal is to learn the mapping from $f_0(x, v) := f(0, x, v)$ to $f(t, x, v)$
+<br>
+
+Our goal is to learn the mapping $\mathcal{G}$ from 
+
+$$
+\mathcal{G}: f_0(x, v) \to f(t, x, v)
+$$
+
 </div>
 <div class="text-center">
 <br>
@@ -1427,23 +1434,23 @@ APCON efficiency
 
 ---
 
-Conclusions
+# Conclusions
 
 We propose several Asymptotic-Preserving Neural Networks for solving the multiscale time-dependent kinetic problems:
 
 - Linear transport
 
-  - APNN_v1 based on micro-macro decomposition
-  - APNN_v2 based on odd-even parity method
+  - APNN v1 based on micro-macro decomposition
+  - APNN v2 based on odd-even parity method
   - APCONs: based on convolutional DeepONets and APNN
 
 - GRTE and VFPF
 
-  - APNN_v1 and APNN_v2
+  - APNN v1 and APNN v2
 
 Boltzmann-BGK equation:
 
-- APNN_v2 based on local conservation laws
+- APNN v2 based on local conservation laws
 
 ---
 
