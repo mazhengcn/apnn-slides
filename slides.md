@@ -185,13 +185,13 @@ layout: center
 class: text-center
 ---
 
-# What are models for Multiscal Kinetic Equations?
+# What are models for multiscale kinetic equations?
 
 PINNs? DeepRitz? ...
 
 ---
 
-# Linear Transport Equations
+# Linear Transport Equation
 
 We use a $1$-D linear transport equation as an example
 
