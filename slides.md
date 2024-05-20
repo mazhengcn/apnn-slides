@@ -315,7 +315,7 @@ $$
   \end{aligned}
 $$
 
-We only need to focus on the first term and taking $\varepsilon \to 0$, this will led to  
+We only need to focus on the first term and taking $\varepsilon \to 0$, this will lead to  
 
 $$
 \begin{equation*}
