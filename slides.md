@@ -20,7 +20,7 @@ fonts:
   mono: Fira Code
 ---
 
-# Solve multiscale kinetic equations with deep learning
+# Solve Multiscale Kinetic Equations with Deep Learning
 
 <br>
 
@@ -132,16 +132,13 @@ Multiscale problem: $\varepsilon$ can be $O(1)$ (kinetic regime) or $\ll 1$ (lim
 <div>
 
 **Knudsen number**
-
-- stability issues for small $\varepsilon$ (stiffness)
-- consistency of the scheme with limiting model as $\varepsilon \to 0$
+  - stability issues for small $\varepsilon$ (stiffness)
+  - consistency of the scheme with limiting model as $\varepsilon \to 0$
 
 **Collision Operator**
-
-- special discretization needed for the collision operator
-- ray effect with bad angular resolution
-- high computational cost for more complicated collision
-
+  - special discretization needed for the collision operator
+  - high computational cost for more complicated collision
+  - ray effect
 </div>
 
 <div>
@@ -167,16 +164,16 @@ Multiscale problem: $\varepsilon$ can be $O(1)$ (kinetic regime) or $\ll 1$ (lim
 
 ---
 
-# Deep Learning Solving PDEs
+# Solve PDEs with Deep Learning
 
-Key components and core ideas of solving PDEs by DNNs
+Key components and core ideas of solving PDEs by Deep Neural Networks
 
-<br>
-
-- **Architecture**: build a deep neural network (function class) for the trail function
-
-- **Constraints**
-  - **Model**: define the loss associated to a PDE (e.g., PINNs, DeepRitz)
+- **Architecture**: build a deep neural network (function class) as the trail function
+  - approximate solution (PINNs)
+  - approximate solution operator (DeepONet, FNO)
+  - mapping from equations (as a computational graph) to solutions (PDEFormer)
+- **Constraints (as Loss)**:
+  - **Model**: PDE / physical information needed (e.g., PINNs, DeepRitz, Deep-Galerkin)
   - Data: pure supervised or as a priori information
   - IC (initial conditions) and BC (boundary conditions)
   - Other constraints: **conservation**, symmetry, etc.
@@ -410,6 +407,7 @@ $$
   \end{aligned}
   \right.
 $$
+
 where $I$ is the identity operator and $\Pi(\cdot)(v):=\left \langle \cdot \right \rangle$ is the projection operator.
 
 <!-- Hilbert expansion:
@@ -483,6 +481,40 @@ Conservation, symmetry, parity, etc
 
 $\mathcal{F^{\varepsilon}}$ is the microscopic equation that depends on the small scale parameter $\varepsilon$ and $\mathcal{F}^{0}$ is its macroscopic limit as $\varepsilon \to 0$, which is independent of $\varepsilon$. The latent solution of $\mathcal{F^{\varepsilon}}$ is approximated by neural networks with its measure denoted by $\mathcal{R}(\mathcal{F^{\varepsilon}})$. The asymptotic limit of $\mathcal{R}(\mathcal{F^{\varepsilon}})$ as $\varepsilon \to 0$, if exists, is denoted by $\mathcal{R}(\mathcal{F}^{0})$. If $\mathcal{R}(\mathcal{F}^{0})$ is a good measure of $\mathcal{F}^{0}$, then it is called asymptotic-preserving (AP).
 
+---
+
+# Micro-macro System
+
+Classical numerical schemes based on this system are usually AP schemes
+
+The micro-macro system for the linear trasport equation
+
+$$
+  \left\{
+  \begin{aligned}
+      & \partial_t \rho  +  \left \langle  v \cdot \nabla_x g  \right \rangle   = 0, \\     
+        \\       
+      & \varepsilon^2 \partial_t g + \varepsilon \left ( I - \Pi \right ) \left ( v \cdot \nabla_x g \right ) + v \cdot \nabla_x \rho  =  - g.
+  \end{aligned}
+  \right.
+$$
+
+Sending $\varepsilon \to 0$, the above system formally approaches 
+
+$$
+  \left\{
+  \begin{aligned}
+      & \partial_t \rho  +  \left \langle  v \cdot \nabla_x g  \right \rangle  = 0, \\          
+      & - v \cdot \nabla_x \rho = g.
+  \end{aligned}
+  \right.
+$$
+
+Plugging the second equation into the first equation gives the diffusion equation
+
+$$
+ \rho_t - \frac{1}{3} \rho_{xx} = 0.
+$$
 
 ---
 
@@ -730,8 +762,7 @@ Plugging the first two equations into the third equation gives the diffusion equ
 
 More general approach
 
-**Here we singled out the equation of local conservation law $\partial_t \rho +  \left \langle v \partial_x j \right \rangle = 0$ is necessary in constructing the APNN loss. By coupling these equations of $r, j$ and $\rho$, one can obtain the loss for the diffusion limit equation.**
-
+**The equation of local conservation law $\partial_t \rho +  \left \langle v \partial_x j \right \rangle = 0$ is important in constructing the APNN loss. By coupling these equations of $r, j$ and $\rho$, one can obtain the loss for the diffusion limit equation.**
 
 For solving the linear transport equation by deep neural networks, we need to use DNN to parametrize three functions $\rho(t, x), r(t, x, v)$ and $j(t, x, v)$. 
 
@@ -1363,6 +1394,7 @@ Asymptotic-Preserving Convolutional Deep Operator Networks
 
 <div class="grid grid-cols-2 gap-x-4 mt-4">
 <div>
+
 $$
   \left\{
       \begin{aligned}
@@ -1406,7 +1438,7 @@ APCON based on Micro-macro decomposition
 
 <div class="text-center">
 
-APCON based on evne-odd decomposition
+APCON based on even-odd decomposition
 
 <img src="/apcon_eo.png" class="h-70 mx-auto rounded-lg b-1 b-b">
 
