@@ -1,6 +1,6 @@
 ---
-theme: default
-# background: https://source.unsplash.com/collection/94734566/1920x1080
+theme: seriph
+background: https://source.unsplash.com/collection/94734566/1920x1080
 # class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -15,9 +15,12 @@ transition: slide-left
 title: Solving Transport Equations by DNNs
 mdc: true
 colorSchema: light
+fonts:
+  sans: inter
+  mono: Fira Code
 ---
 
-# Solving Multiscale Kinetic Equations by Deep Learning
+# Solve multiscale kinetic equations with deep learning
 
 <br>
 
@@ -25,11 +28,11 @@ Zheng Ma
 
 Shanghai Jiao Tong University
 
-Joint work with Shi Jin, Keke Wu, Yekun Zhu, Tianai Zhang and Xiongbin Yan
+Joint work with Shi Jin, Keke Wu, Tianai Zhang and Xiongbin Yan
 
-<div class="abs-br m-6 flex gap-2">
+<!-- <div class="abs-br m-6 flex gap-2">
   <img src="/affiliation.png" class="h-12">
-</div>
+</div> -->
 
 <!-- https://sli.dev/ -->
 
@@ -51,7 +54,7 @@ Neutron Transport:
   <img src="/nte.png" class="h-60 rounded-lg b-1 b-b">
 </div>
 
-Nuclear fission, nuclear fusion, ...
+Nuclear fission, ...
 
 </div>
 
@@ -64,7 +67,7 @@ Radiative Transfer:
   <img src="/rte.png" class="h-60 rounded-lg b-1 b-b">
 </div>
 
-Radiation Therapy, TPS, ...
+Radiation Therapy, nuclear fusion, ...
 </div>
 
 </div>
